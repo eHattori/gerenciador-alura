@@ -28,6 +28,7 @@ public class Login extends HttpServlet{
 			writer.println("<html><body>Usuário não encontrado</body></html>");
 		} else {
 			Cookie cookie = new Cookie("usuario.logado", usuario.getEmail());
+			cookie.setMaxAge(10*60);
 			resp.addCookie(cookie);
 			writer.println("<html><body>Bem vindo: "+ usuario.getEmail() +"</body></html>");
 		}		
